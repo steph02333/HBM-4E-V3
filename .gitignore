@@ -1,0 +1,12 @@
+# Large raw simulation files and local temporary outputs
+*.aedtresults/
+*.aedb/
+*.aedt.lock
+*.aedt
+*.q3d
+*.log
+*.tmp
+__pycache__/
+.ipynb_checkpoints/
+.venv/
+# Only curated result files should be committed after review
