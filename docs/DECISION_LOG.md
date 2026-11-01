@@ -34,3 +34,15 @@
 - Diagnosis **not yet confirmed**: Windows Python launcher may honor script's `#!/usr/bin/env python3` shebang and select a different interpreter from `py -c`. A conflicting module in the script folder is an alternative possibility.
 - Next diagnostic: confirm `py -3.13 -c "import sys; from ansys.aedt.core import Q3d; print(sys.executable)"`, then rerun B01 using explicit `py -3.13 "C:\暂时下载\G01_coax_benchmark.py" --case B01 --student --aedt-version 2025.2`. If it fails again, inspect import with `sys.path.insert(0, r'C:\暂时下载')`.
 - G01 remains OPEN; no numerical Q3D result exists from either failed run.
+
+## 2026-11-01 17:59–18:00 (SGT) — G01 B01 fresh AEDT solve completed; numerical validation pending
+
+- User launched with explicit interpreter: `py -3.13 "C:\暂时下载\G01_coax_benchmark.py" --case B01 --student --aedt-version 2025.2`.
+- Run ID: `20261101_175942_4a2c83`. Source SHA-256 reported: `18e2fc8c7c5982e54e524f2fcb0518343ae24dcb18459312629ac16dc5de4cbf`.
+- Runtime: Python 3.13.5, PyAEDT 1.9.0, AEDT 2025.2SV Student, Q3D Extractor.
+- AEDT installation path from log: `C:\ANSYS Inc\ANSYS Student\v252\AnsysEM`.
+- Fresh project `CA2V3_B01_af470450`, design `Coax_B01`; three reported final objects: `Cu_SIGNAL`, `SiO2_LINER`, `Cu_GROUND_SHELL`; signal and ground nets created.
+- `G01_Setup` reported solved correctly in 18 seconds; script reported `SOLVED_EXPORT_READY_FOR_REVIEW` and C-Maxwell matrix export success.
+- Analytical value: **84.045449519 fF**. **Actual Q3D value and relative error not yet available** in pasted console log.
+- User's evidence bundle path: `C:\CA2 result V2\01_analytical_benchmark\runs\20261101_175942_4a2c83\G01_results_bundle.zip`.
+- **G01 remains OPEN / NOT PASSED** pending upload and inspection of exported matrix, unit conventions and solver convergence, plus eventual completion of B01–B09 and formal gate review. Do not run additional cases until B01 review.
