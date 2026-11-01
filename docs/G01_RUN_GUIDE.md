@@ -5,6 +5,19 @@ This is Prof Lim's level-1 analytical benchmark only, not a realistic doped-sili
 
 Do not run legacy scripts or import an old Q3D project.
 
+## Verified user environment (2026-11-01)
+- Script download folder supplied by researcher: `C:\暂时下载`.
+- Ansys installed edition: **Ansys EM Student 2025 R2** (PyAEDT version argument `2025.2`).
+- Reported Windows Start Menu shortcut folder: `D:\ProgramData\Microsoft\Windows\Start Menu\Programs\Ansys EM Student 2025 R2`; this folder is **not confirmed as the Ansys installation root** and should not be used as one.
+- Experiment output root remains `C:\CA2 result V2`.
+- Exact B01 Windows CMD command:
+
+```bat
+py "C:\暂时下载\G01_coax_benchmark.py" --case B01 --student --aedt-version 2025.2
+```
+
+If the `py` launcher is unavailable, check Python installation and PATH before retrying. Do **not** invoke the script from the AEDT built-in scripting environment; it requires the normal Python interpreter with PyAEDT.
+
 ## First run: B01 only
 1. Download or clone scripts/G01_coax_benchmark.py to Windows.
 2. Install Python 3 and PyAEDT in the same Python installation: py -m pip install -U pyaedt
