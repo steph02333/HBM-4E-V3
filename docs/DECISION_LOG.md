@@ -25,3 +25,12 @@
 - No Q3D simulation was performed; G01 remains OPEN / NOT PASSED.
 - User-side next step: install PyAEDT into same `py` interpreter with `py -m pip install -U pyaedt`, verify import, then retry B01.
 - Local log/bundle folder: `C:\CA2 result V2\01_analytical_benchmark\runs\20261101_175731_2c15db` (not available to connector; results based on pasted console log).
+
+## 2026-11-01 17:58 (SGT) — G01 B01 second import failure despite successful command-line import
+- Successful command: `py -c "from ansys.aedt.core import Q3d; print('PyAEDT import OK')"` printed `PyAEDT import OK`.
+- Failed script invocation: `py "C:\暂时下载\G01_coax_benchmark.py" --case B01 --student --aedt-version 2025.2`.
+- New run ID: `20261101_175846_8e90b4`; same reported source SHA-256 `18e2fc8c7c5982e54e524f2fcb0518343ae24dcb18459312629ac16dc5de4cbf`.
+- Script still failed on `from ansys.aedt.core import Q3d` with `ModuleNotFoundError: No module named 'ansys'`, **before** creating/solving Q3D geometry.
+- Diagnosis **not yet confirmed**: Windows Python launcher may honor script's `#!/usr/bin/env python3` shebang and select a different interpreter from `py -c`. A conflicting module in the script folder is an alternative possibility.
+- Next diagnostic: confirm `py -3.13 -c "import sys; from ansys.aedt.core import Q3d; print(sys.executable)"`, then rerun B01 using explicit `py -3.13 "C:\暂时下载\G01_coax_benchmark.py" --case B01 --student --aedt-version 2025.2`. If it fails again, inspect import with `sys.path.insert(0, r'C:\暂时下载')`.
+- G01 remains OPEN; no numerical Q3D result exists from either failed run.
