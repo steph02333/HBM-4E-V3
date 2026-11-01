@@ -37,3 +37,13 @@ The current initial campaign contains 4 mesh settings, 4 pitch perturbations, 3 
 
 ## G02 PASS criteria
 Must document <1% stability of self and mutual C under additional mesh refinement where feasible, matrix symmetry/passivity, correct reference/charge accounting, trends, and finite-domain sensitivity. In particular, this initial zero-conductivity Si feasibility fixture does **not** satisfy Prof Lim's realistic 10 ohm-cm silicon recommendation. Expect model updates and revalidation before G02 formally passes.
+
+## 2026-11-01 — V2.2 diagnostic capture patch
+
+A standalone replacement file named `G02_validation_v2_2.py` was generated and syntax checked. Its dry-run ZIP was inspected and contained `full_console_transcript.txt`, `runner.log`, and case summaries. The actual AEDT solver behaviour has **not yet** been tested on the researcher's Windows installation. This diagnostic file should be run instead of V2/V2.1 and its resulting ZIP uploaded.
+
+Command: `py -3.13 "C:\暂时下载\G02_validation_v2_2.py" --mode pilot --student --aedt-version 2025.2`.
+
+V2.2 records Python/PyAEDT stdout and stderr to a persistent console transcript under `C:\CA2 result V2\02_numerical_convergence\logs`, copies that transcript into the run ZIP, and attempts AEDT Desktop/Project/Design message snapshots **before and after every solve** and on any failure. It still preserves independent-case failures instead of aborting the entire campaign; it does not assert mesh-limit failure without an actual Ansys error. A correct pilot baseline must solve without an explicit mesh length operation.
+
+**Current status:** G02 OPEN; earlier V2 1.5 and 1.2 um seeding pilots failed without actionable AEDT diagnostics. Source code version in local provided download is v2.2; repository migration of this complete standalone script is pending (do not confuse the older `scripts/G02_validation.py` with V2.2).
