@@ -50,3 +50,23 @@ Store experiments under `C:\CA2 result V2\02_numerical_convergence\` with unique
 **G02 PASS only if:** the intended electrical reference/geometry is documented, numerical meshes are stable for relevant self and mutual C, physical/mathematical sanity checks pass or discrepancies are physically explained, and domain effects are bounded. If the final physical topology/materials change later, affected G02 tests must be rerun.
 
 **Immediate action:** produce/inspect a frozen multi-TSV geometry-and-net specification (G02-MODEL-01), then generate a new parametrized Q3D script. No full DOE or ML.
+
+## 2026-11-01 — Student-edition mesh-budget protocol (confirmed with official Ansys documentation)
+
+Researcher's installed solver: **Ansys Electronics Desktop Student 2025 R2, Q3D**, Python 3.13, PyAEDT 1.9.0.
+
+Official Student limits (Ansys Electronics Desktop Student product restrictions): **64,000 3D volume elements, 8,000 3D surface elements, 2,000 2D triangles; maximum 4 HPC cores**. Source: https://ansys.synopsys.com/academic/students/ansys-electronics-desktop-student . These are product limits, **not** convergence results.
+
+### Staged protocol (adaptive coverage rather than arbitrary case count)
+
+1. **Feasibility pilot:** start with a minimal 2-signal + ground reference fixture and modest mesh settings. This is a resource/capability test only, not a substitute for representative multi-TSV validation.
+2. **Freeze target topology:** validate the actual relevant multi-TSV topology once a feasible geometry and reference path have been demonstrated; state where topology simplification changes physics.
+3. **Progressive refinement:** progressively tighten Q3D capacitance error and/or adaptive pass budget. Archive each separate solved state, its matrix, surface and volume mesh statistics, pass history and AEDT message log. Early runs should target a buffer below the official caps (e.g. 70–80% is a **planning heuristic**, not a vendor threshold).
+4. **Stop rules:** stop further refinement at validated <1% self and mutual change; alternatively stop at verified license element cap or solver resource failure. Distinguish `LICENSE_MESH_LIMIT`, `FAILED_OTHER`, `CONVERGED`, `NOT_CONVERGED_WITHIN_AVAILABLE_BUDGET`.
+5. **Numerical error:** track changes under at least two progressively stricter reproducible solutions; Q3D internal adaptive delta alone is not independent mesh validation. A relative test on near-zero mutual terms requires a preregistered absolute-fF threshold.
+6. **Consistency:** complete symmetry, energy/passivity, physically consistent terminal charge accounting, one-factor trend checks and outer-domain size sensitivity even if the mesh limit blocks <1% refinement.
+7. **Corner coverage:** repeat tighter mesh checks on geometrically stressful cases (small pitch, thin liner, tall TSV) to avoid extrapolating nominal convergence to every geometry.
+8. **Report** both achieved discretization stability and unresolved uncertainty. If <1% cannot be demonstrated, describe the Student edition's cap as a **documented limitation**; do not report an unpassed numerical criterion as validated or call it an error estimate without an appropriate convergence study.
+9. **Impact on ML:** final reference model cannot be treated as quantitatively high fidelity beyond demonstrated convergence. If needed, simplify the physical domain with justification, license academic full AEDT, or narrow claims and propagate estimated label uncertainty.
+
+**No experimental results from this protocol have yet been collected; G02 remains OPEN.**
