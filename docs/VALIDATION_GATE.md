@@ -23,3 +23,14 @@
 6. If a physical model changes after a gate passes, mark affected downstream gates **REVALIDATION REQUIRED**.
 
 No previous CA2 dataset is admissible as a V3 gate result.
+
+## G01 subcase progress (2026-11-01)
+
+| Subcase | Numerical outcome | Decision |
+|---|---|---|
+| B01 | Analytic 84.045449519 fF; Q3D 84.875579314 fF; error 0.987715%; 6 CG passes; final delta 0.18624% (<0.5% solver target) | Numeric agreement favorable; evidence inspected; **G01 still OPEN** |
+| B02–B09 | No new V3 evidence reviewed | NOT STARTED |
+
+Traceability: [B01 evidence review](../results/g01/B01_20261101_175942_4a2c83_review.md) and [B01 numeric CSV](../results/g01/B01_review_metrics.csv).
+
+A single reference-grounded coax capacitor is not evidence for 3x3 mutual coupling. It cannot establish the validity of the final TSV substrate model. Complete B02–B09 within G01 first.
