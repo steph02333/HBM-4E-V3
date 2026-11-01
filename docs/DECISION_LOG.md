@@ -46,3 +46,12 @@
 - Analytical value: **84.045449519 fF**. **Actual Q3D value and relative error not yet available** in pasted console log.
 - User's evidence bundle path: `C:\CA2 result V2\01_analytical_benchmark\runs\20261101_175942_4a2c83\G01_results_bundle.zip`.
 - **G01 remains OPEN / NOT PASSED** pending upload and inspection of exported matrix, unit conventions and solver convergence, plus eventual completion of B01–B09 and formal gate review. Do not run additional cases until B01 review.
+
+## 2026-11-01 — G01 B01 ZIP independently inspected (preliminary numeric success)
+- User provided `G01_results_bundle.zip` (SHA256: `1ae6b6a5d228773b0c209ed7110729d47a63e958b9f497cc688f6adca4d08680`).
+- Original Maxwell C matrix has one non-reference signal coefficient: `C(SIGNAL,SIGNAL) = 84.87557931367954 fF`. Ground is the reference net.
+- Analytical Eq. (5) prediction: `84.04544951915052 fF`; difference +0.83012979452902 fF; absolute relative error **0.9877153365%** (<5% initial target).
+- CG adaptive mesh: **6 passes**, final **0.18624%**, configured target **0.5%**; normal solver completion.
+- The error's cause (possibly finite-end fringing) has NOT been demonstrated. Single-coax test cannot validate semiconductor effects or mutual TSV coupling.
+- Detailed traceable report: [B01 independent review](../results/g01/B01_20261101_175942_4a2c83_review.md).
+- **Gate G01 remains OPEN**. Next: run B02–B09 with the same frozen version of `G01_coax_benchmark.py` (the existing `--all` command also repeats B01 in a new run); inspect complete new evidence before moving to G02.
