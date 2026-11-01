@@ -1,11 +1,11 @@
 # Validation gates — Prof Lim instruction tracker
 
-**Status: G01 OPEN; all later gates BLOCKED.** Date initiated: 2026-11-01.
+**Status: G01 PASS (2026-11-01); G02 OPEN; later gates BLOCKED.** Date initiated: 2026-11-01.
 
 | Gate | Required evidence | Exit test | Status |
 |---|---|---|---|
-| G01 Analytical benchmark | New multi-geometry single cylindrical Cu/SiO2 simulations, analytical calculations, matched boundary conditions and error report | Numerical agreement evaluated against a predeclared target (initial target ≤5% for suitable ideal benchmark geometry); any outlier explained, raw outputs archived, review documented | OPEN |
-| G02 Mesh + physical consistency | Multiple TSV geometries; pass-by-pass Cself and Cmutual, symmetry, sign, passivity, charge/terminal balance, trend checks | Additional refinement changes selected key C values <1%; failed checks resolved or characterized | BLOCKED |
+| G01 Analytical benchmark | Nine ideal Cu/SiO2/Cu reference-coax cases, raw Q3D matrices, convergence histories | All 9 absolute errors 0.776–1.668%, below 5% preliminary target; each final CG delta <0.5%. Ideal-coax-only scope explicitly stated. | PASS (2026-11-01) |
+| G02 Mesh + physical consistency | Multi-TSV C matrix plus mesh-pass history, symmetry, physical trends, passivity/charge bookkeeping, domain-size sensitivity | Converged self and mutual capacitance to <1% under further refinement, remaining checks documented | OPEN |
 | G03 Domain sensitivity | Increase simulation domain with identical physical test geometry | Boundary influence quantified, acceptable tolerance documented | BLOCKED |
 | G04 Independent solver | 10–20 representative matched geometries in Maxwell/COMSOL or other independent field solver | ~2–5% agreement as target; define exact metrics/limitations before execution | BLOCKED |
 | G05 Physical model revision | Evidence-backed dimensions D=3–6, P=10–20, H=25–50, tox=0.1–0.5 µm; Si resistivity 1/10/100 Ω·cm (10 nominal); GSG/GSSG/GSGSG arrangements | Geometry/material/net/return-path conventions justified; silicon conductivity conversion checked; sensitivity study complete | BLOCKED |
@@ -34,3 +34,8 @@ No previous CA2 dataset is admissible as a V3 gate result.
 Traceability: [B01 evidence review](../results/g01/B01_20261101_175942_4a2c83_review.md) and [B01 numeric CSV](../results/g01/B01_review_metrics.csv).
 
 A single reference-grounded coax capacitor is not evidence for 3x3 mutual coupling. It cannot establish the validity of the final TSV substrate model. Complete B02–B09 within G01 first.
+
+## G01 closure decision — 2026-11-01
+The new V3 bundle `20261101_180629_c27de8` was inspected directly: nine raw Q3D C matrices agree with the analytical coaxial Cu/SiO2/ground result, largest relative error 1.66823%. All nine CG convergence histories report final delta <0.5%. **G01 passes only as an ideal coaxial benchmark.** It does not independently validate doped Si, coupling, bias, or end-effect causality. The systematic positive offset may include end fringing; it remains an interpretation, not a proven cause.
+
+**G02 OPEN:** first establish a representative multi-conductor geometry/net/reference specification. Do not interpret matrix row sums as unconditional zero where reference conductors are eliminated; the energy criterion requires the correct Maxwell coefficient convention.
