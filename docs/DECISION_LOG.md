@@ -15,3 +15,13 @@
 |---|---|---|
 | G01 | Prof Lim email + CA1 Wang 2014 formula + benchmark design | SPECIFIED, NOT RUN |
 | G02–G07 | Not yet generated | NOT STARTED |
+
+## 2026-11-01 17:57 (SGT) — G01 B01 first-run failure (environment)
+- Command: `py "C:\暂时下载\G01_coax_benchmark.py" --case B01 --student --aedt-version 2025.2`
+- Run ID: `20261101_175731_2c15db`.
+- Script SHA-256 reported: `18e2fc8c7c5982e54e524f2fcb0518343ae24dcb18459312629ac16dc5de4cbf`.
+- Analytical B01 value calculated: `84.045449519 fF`.
+- Failure during `from ansys.aedt.core import Q3d`: `ModuleNotFoundError: No module named 'ansys'`.
+- No Q3D simulation was performed; G01 remains OPEN / NOT PASSED.
+- User-side next step: install PyAEDT into same `py` interpreter with `py -m pip install -U pyaedt`, verify import, then retry B01.
+- Local log/bundle folder: `C:\CA2 result V2\01_analytical_benchmark\runs\20261101_175731_2c15db` (not available to connector; results based on pasted console log).
