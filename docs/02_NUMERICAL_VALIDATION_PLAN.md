@@ -70,3 +70,16 @@ Official Student limits (Ansys Electronics Desktop Student product restrictions)
 9. **Impact on ML:** final reference model cannot be treated as quantitatively high fidelity beyond demonstrated convergence. If needed, simplify the physical domain with justification, license academic full AEDT, or narrow claims and propagate estimated label uncertainty.
 
 **No experimental results from this protocol have yet been collected; G02 remains OPEN.**
+
+## 2026-11-01 — Corrective runner V2 after 18-case audit
+A new local script artifact `G02_validation_v2.py` was prepared for download in the associated ChatGPT conversation. Its Python syntax and dry-run plan have been checked; **actual AEDT execution is not yet verified**. The code is not yet committed to GitHub, so do not mistake this note for a repository script update.
+
+Design: explicit Q3D `assign_length_mesh(assignment=[Cu and liner objects], inside_selection=False, maximum_length=...)` with decreasing length; distinct fresh projects per case, mesh-statistics evidence; separate 3-TSV G-S-S nominal pilot and broader mesh, pitch, diameter, liner, domain and stressed-corner cases. Each failure is recorded per case without terminating the overall campaign. For ordered mesh/domain escalations, after three consecutive solver failures, more aggressive levels are skipped; independent test groups continue. The 1% requirement is checked only after authentic differences in actual mesh counts are confirmed. Domain sensitivity distinguishes finite physical silicon geometry and artificial truncation; reference charge closure computed from a reduced Maxwell matrix is algebraic bookkeeping, **not** an independent physical charge-conservation proof. A physical silicon-resistivity model and independent charge/flux verification remain required before G02 closes.
+
+Suggested run commands on user's Windows system:
+- `py -3.13 "C:\暂时下载\G02_validation_v2.py" --mode pilot --student --aedt-version 2025.2`
+- After reviewing pilot: `py -3.13 "C:\暂时下载\G02_validation_v2.py" --mode full --student --aedt-version 2025.2`
+
+All results: `C:\CA2 result V2\02_numerical_convergence\runs\<run_id>\G02_results_bundle.zip`.
+
+Reference: PyAEDT length-mesh API https://aedt.docs.pyansys.com/version/stable/API/_autosummary/ansys.aedt.core.modules.mesh.Mesh.assign_length_mesh.html
