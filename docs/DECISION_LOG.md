@@ -55,3 +55,6 @@
 - The error's cause (possibly finite-end fringing) has NOT been demonstrated. Single-coax test cannot validate semiconductor effects or mutual TSV coupling.
 - Detailed traceable report: [B01 independent review](../results/g01/B01_20261101_175942_4a2c83_review.md).
 - **Gate G01 remains OPEN**. Next: run B02–B09 with the same frozen version of `G01_coax_benchmark.py` (the existing `--all` command also repeats B01 in a new run); inspect complete new evidence before moving to G02.
+
+## 2026-11-01 G02 pilot evidence
+Run 20261101_182327_f0dcfa: new three-TSV G-S-S extraction solved. Maxwell C matrix (fF): [[7.73364348, -3.46365160], [-3.46365160, 5.80995368]]. Symmetry exact to exported digits. Eigenvalues positive (approximately 3.1771 and 10.3665 fF). Q3D CG adaptive 4 passes, final delta 0.18863% against 2% setting; 4358 total reported mesh elements. Source material is epsilon-r 11.7 and silicon conductivity 0 S/m, so this is a software/geometry feasibility pilot, not validation of 10 ohm-cm silicon. Charge/reference balance, cross-run mesh independence, physical trend, and domain checks remain open. No mesh license failure observed. G02 NOT PASSED.
