@@ -1,0 +1,7 @@
+# FYP current state — post G02 V6.0, 2026-11-03
+
+**Read first:** [real V6.0 audit](../results/g02/G02_V60_REAL_MIXED_GEOMETRY_READINESS_AUDIT_20261103.md). This supersedes the optimistic V5.9 adjacent-only PASS extrapolations.
+
+V6.0 attempted 18 Q3D cases, 17 successful, GSSG sigma1 MIX_B R7 failed official Student 8364 surface/8000. Strict mesh-readiness screen: 0/6 new groups pass; merging V5.7–V6.0 gives 1/15 groups pass (GSSG sigma1 WEAK L6). Critical issue is mixed-geometry high-risk |CAB| varying 3–5% across mesh allocation, plus resource ceiling and ineffective L8→L10 seed for GSGSG sigma10 STRONG. **DOE not ready for a blanket claim of <1% all points**; existing successful nominal/weak within-policy evidence still valid with its scope.
+
+Do not run second V6.0 coverage 12 blindly. Next experiment: controlled mesh-allocation alternatives for high-risk mixed strata + license-budget feasibility, then held-out representative cross-policy checks. Do not modify Q3D model while claiming numerical comparability. CSV audit files generated independently from V6.0 ZIP include 18 case rows, 11 adjacent mesh-pair rows, 6 group rows. Native requested frequency 1000MHz remains mismatched with text-export frequency header; native solver frequency must be checked separately. Reduced H0 conductive-silicon model remains simplified; no real HBM4 die bias/contact or independent charge closure proof. Original DOE must be space filling, not biased toward easy mesh cases.
