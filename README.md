@@ -55,3 +55,7 @@ Literature (CA1): Wang et al., *Microelectronics Journal* 45 (2014), 205–210, 
 ## Latest G02 V6.5 targeted refinement (2026-11-05)
 
 [Audited Phase B: 36 new R2/R4/R6 solves](results/g02/G02_V65_PHASEB_R246_12DOE_36SOLVE_PASSWISE_AUDIT_20261105.md). **36/36** solved, **8/12** previously unresolved DOE found individual last-pass Cself/Cmutual <1% solutions. In total **445/450** DOE have at least one successful run meeting this *numerical stability screen*. Remaining: DOE0099, DOE0100, DOE0233, DOE0321 and Student-license DOE0447. G02 physical/numerical validation remains OPEN.
+
+## CURRENT G02 V6.7 status (2026-11-05; supersedes Phase B 445/450)
+
+**Phase C 7/7 solved; 447/450 DOE have at least one last-pass all-coefficient <1% run. DOE0447 was recovered with R1 original 8um mesh seed. The three remaining CAB numerical stability outliers are DOE0099, DOE0233 and DOE0321.** The prior 445/450 from Phase B remains a historical count, not the latest. Every ML label candidate C matrix must be sourced from its selected R and selected case. [Detailed V6.7 audit](results/g02/G02_V67_PHASEC_R1_FOUR_CAB_OUTLIERS_DOE0447_7SOLVE_AUDIT_20261105.md). Physical validation G02 OPEN.
