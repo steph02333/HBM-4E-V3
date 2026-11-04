@@ -1,6 +1,6 @@
 # Production DOE — Open Mesh Verification Ledger (Chunk 1–5)
 
-**Last updated:** 2026-11-04 · **Authoritative living GitHub backlog**. Append new Chunk 2/3/4/5 issues to THIS SAME FILE, do not create separate disconnected to-do lists. Frozen 450-point V6.2/V6.3 manifest; never replace an original DOE coordinate because of mesh difficulty.
+**Last updated:** 2026-11-04 (Chunk 3 audit appended) · **Authoritative living GitHub backlog**. Append new Chunk 2/3/4/5 issues to THIS SAME FILE, do not create separate disconnected to-do lists. Frozen 450-point V6.2/V6.3 manifest; never replace an original DOE coordinate because of mesh difficulty.
 
 ## Meaning of statuses — professor-aligned
 
@@ -122,9 +122,78 @@ DOE0123, DOE0132, DOE0163, DOE0175, DOE0177, DOE0206, DOE0207, DOE0212, DOE0222.
 After the full 450-point acquisition, prioritize the 61 P1 to date for controlled adaptive follow-up. Save the complete per-point matrix/mesh CSV and source result ZIPs; no training-label "truth" certification can be inferred from the above alone.
 
 
-## Chunk 3/4/5 — awaiting results
+## Chunk 3 — independently audited real archive, 2026-11-04
 
-Status: NOT YET RUN / RECEIVED.
+Original uploaded `G02_V63_H0_PRODUCTION_DOE_results_bundle.zip` SHA256 `6fe9493b46571b6e5fcfc16735010844bbb8e1c27b940b30c9c5510a3590e19b`; native `manifest.json` explicitly says `chunk=3`. **100 unique DOE IDs / 200 of 200 successful saved R3/R5 solves.** Worst relevant capacitance difference is `max(ΔCAA,ΔCBB,Δ|CAB|)` across each real pair; for GSG only CAA. **73/100 below professor's ~1% two-level C consistency screen; 27/100 at or above 1%**. Supplemental only: 64 below 1% with under-10% total mesh growth; 9 below 1% with 10%+ growth. The 10% heuristic is *not* mandated by professor or Ansys.
+
+**Chunk 3 error buckets**: <1%=73; 1–2%=15; 2–5%=10; ≥5%=2. Median max coefficient difference 0.4093%, P90 3.1036%, max **7.8223%**. Median total mesh growth 5.1422%. All 200 native exports again have frequency header mismatch with requested 1000MHz; this remains an unresolved provenance caveat.
+
+### High-risk ≥5% watchlist (retain permanently for concentrated follow-up)
+
+| Chunk | DOE ID | Topology | rho (Ω·cm) | Worst coefficient | ΔC (%) | D/P/H/tox (µm) |
+|---|---|---|---:|---|---:|---|
+| 1 | DOE0050 | GSGSG | 1 | AB | 5.1177 | 3.52713 / 19.15600 / 41.97181 / 0.19028 |
+| 3 | DOE0184 | GSGSG | 1 | AB | 5.4688 | 4.83921 / 12.23673 / 25.54518 / 0.30285 |
+| 3 | DOE0240 | GSGSG | 100 | AB | **7.8223** | 4.30498 / 14.09166 / 26.05169 / 0.37574 |
+
+Chunk 2 has zero ≥5% cases. Keep these P1; all 1–5% P1 cases remain equally in main queue.
+
+### P1: 27 new Chunk 3 priority follow-ups
+
+| DOE ID | Topology | rho (Ω·cm) | Worst coefficient | R3/R5 ΔC (%) | Δ total mesh (%) | Status |
+|---|---|---:|---|---:|---:|---|
+| DOE0183 | GSGSG | 1 | AB | 1.232918 | 7.534598 | OPEN |
+| DOE0184 | GSGSG | 1 | AB | 5.468813 | 19.982159 | OPEN |
+| DOE0193 | GSGSG | 100 | AB | 3.566586 | 30.327869 | OPEN |
+| DOE0214 | GSSG | 1 | AB | 3.152298 | 23.392461 | OPEN |
+| DOE0215 | GSSG | 1 | AB | 1.360188 | 8.930426 | OPEN |
+| DOE0224 | GSSG | 100 | AA | 1.111789 | 18.797164 | OPEN |
+| DOE0226 | GSGSG | 1 | AB | 4.318705 | 24.621014 | OPEN |
+| DOE0228 | GSGSG | 1 | AB | 3.106298 | 16.849817 | OPEN |
+| DOE0232 | GSGSG | 10 | AB | 1.438295 | 2.667364 | OPEN |
+| DOE0234 | GSGSG | 10 | AB | 1.282138 | 2.615063 | OPEN |
+| DOE0238 | GSGSG | 100 | AB | 1.696310 | 2.770518 | OPEN |
+| DOE0240 | GSGSG | 100 | AB | 7.822347 | 36.165176 | OPEN |
+| DOE0241 | GSG | 1 | AA | 4.650763 | 72.691162 | OPEN |
+| DOE0242 | GSG | 1 | AA | 3.931186 | 72.249752 | OPEN |
+| DOE0245 | GSG | 1 | AA | 1.073186 | 35.881842 | OPEN |
+| DOE0257 | GSSG | 1 | AB | 2.798561 | 25.235718 | OPEN |
+| DOE0266 | GSSG | 100 | AB | 1.436286 | 27.428999 | OPEN |
+| DOE0269 | GSSG | 100 | AA | 1.406627 | 31.395082 | OPEN |
+| DOE0271 | GSGSG | 1 | AB | 1.764267 | 8.133087 | OPEN |
+| DOE0272 | GSGSG | 1 | AB | 4.698227 | 65.577627 | OPEN |
+| DOE0273 | GSGSG | 1 | AB | 3.236429 | 29.144385 | OPEN |
+| DOE0277 | GSGSG | 10 | AB | 1.276051 | 2.564103 | OPEN |
+| DOE0282 | GSGSG | 100 | AB | 1.734545 | 20.877316 | OPEN |
+| DOE0286 | GSG | 1 | AA | 3.103249 | 66.253575 | OPEN |
+| DOE0288 | GSG | 1 | AA | 1.096690 | 17.931689 | OPEN |
+| DOE0303 | GSSG | 1 | AB | 1.298873 | 6.772009 | OPEN |
+| DOE0307 | GSSG | 10 | BB | 1.010822 | 17.498613 | OPEN |
+
+### P2: 64 under-1%-C points, extra mesh-growth heuristic below 10% (selectively audit, NOT failed)
+
+DOE0185, DOE0188, DOE0189, DOE0190, DOE0194, DOE0195, DOE0199, DOE0200, DOE0204, DOE0205, DOE0208, DOE0209, DOE0210, DOE0213, DOE0219, DOE0220, DOE0227, DOE0229, DOE0230, DOE0231, DOE0233, DOE0235, DOE0236, DOE0237, DOE0239, DOE0243, DOE0244, DOE0246, DOE0247, DOE0248, DOE0249, DOE0250, DOE0251, DOE0252, DOE0253, DOE0254, DOE0255, DOE0256, DOE0258, DOE0259, DOE0260, DOE0261, DOE0263, DOE0264, DOE0265, DOE0267, DOE0268, DOE0276, DOE0278, DOE0281, DOE0283, DOE0289, DOE0291, DOE0292, DOE0293, DOE0294, DOE0296, DOE0297, DOE0298, DOE0299, DOE0301, DOE0302, DOE0311, DOE0312.
+
+### TWO_LEVEL_SCREEN_CLEAR: 9 under-1%-C points with extra >=10% mesh-growth heuristic
+
+DOE0218, DOE0223, DOE0225, DOE0262, DOE0270, DOE0287, DOE0306, DOE0308, DOE0313.
+
+### Cumulative Chunk 1 + 2 + 3
+
+| Metric | Chunk 1 | Chunk 2 | Chunk 3 | Total |
+|---|---:|---:|---:|---:|
+| DOE points sampled | 100 | 100 | 100 | **300** |
+| Successful solves | 200 | 200 | 200 | **600** |
+| C coefficients all <1% | 73 | 66 | 73 | **212** |
+| P1 C ≥1% | 27 | 34 | 27 | **88** |
+| P2 C <1%, small mesh growth (extra diagnostic) | 63 | 57 | 64 | **184** |
+| Under-1% + >=10% growth (extra diagnostic) | 10 | 9 | 9 | **28** |
+
+New local evidence files: `G02_V63_chunk3_100points_mesh_audit.csv` (100 real pairs and full inputs), `G02_V63_chunk3_200solve_signed_matrices.csv` (200 signed matrices), original raw archive retained by researcher. **These companion files are local artifacts, not yet in repository.** [Chunk 3 detailed audit](G02_V63_CHUNK3_100POINT_PRODUCTION_AUDIT_20261104.md).
+
+## Chunk 4 — partial run, recovery pending; Chunk 5 — not yet verified
+
+Chunk 4 has a reported local recovery diagnostic of 155 solved, 14 failed and 31 not saved at the time of the crash. **Do not count it as complete** until complete results and manifest are audited. Chunk 5 has no confirmed uploaded results.
 
 ## Follow-up execution plan (do this AFTER main DOE acquisition, per researcher's preference)
 
@@ -132,7 +201,7 @@ Status: NOT YET RUN / RECEIVED.
 2. Generate deduplicated **targeted follow-up manifest** preserving original DOE IDs and all six original inputs. **P1 first**: try a third genuinely different adaptive level, compare all relevant C coefficients to both historical levels, check Student surface license constraints. If R7 is infeasible or ineffective, use controlled alternate mesh allocation and compare independently. No universal blind R7 assumption.
 3. For P2, audit a **representative random / risk-stratified sample**, not necessarily all 63 solely because of arbitrary 10% mesh-growth cutoff. Examine actual mesh distribution and adaptive history; further levels only where needed.
 4. Maintain follow-up result statuses `OPEN`, `ATTEMPTED`, `CONFIRMED_WITHIN_POLICY`, `UNRESOLVED`, `BLOCKED_STUDENT_LIMIT`; never call `SOLVED` automatically `PHYSICALLY_VALIDATED`.
-5. Before training/reporting as truth: resolve Q3D native 1 GHz vs exported matrix frequency-header mismatch (present in all 400 Chunk 1 + Chunk 2 solves); address remaining simplified H0 physical-model and independent solver caveats separately.
+5. Before training/reporting as truth: resolve Q3D native 1 GHz vs exported matrix frequency-header mismatch (present in all 600 Chunk 1 + Chunk 2 + Chunk 3 solves); address remaining simplified H0 physical-model and independent solver caveats separately.
 6. Record exact follow-up command, runner/script checksum, run folder, numerical comparisons and evidence ZIP; commit updated ledger alongside per-point QA CSV.
 
 **This ledger is a living audit backlog, not a declaration that 90/100 labels are unusable.**
