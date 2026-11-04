@@ -52,3 +52,9 @@ For each successful run with >=2 adaptive passes, compute the last-pass relative
 **Decision correction:** Previous 374/75/1 grouping used two independently computed *final* matrices (R3 versus R5) and was not the professor's direct "further adaptive mesh refinement" check. Retire the 2% provisional ML-eligibility and 76-point follow-up plan; preserve historical R3/R5 differences as a separate sensitivity measure. Q3D matrix Delta C <0.5% does NOT imply small mutual coefficient relative changes (80 counterexamples). Despite new numerical evidence, **G02 remains OPEN** until representative coefficient-specific convergence, domain, symmetry/passivity, boundary conditions and physical model gate criteria are adjudicated; no blanket ML-label qualification.
 
 Links: [full 450-point MCAP audit](../results/g02/G02_V63_450POINT_PASSWISE_CSELF_CMUTUAL_AUDIT_20261104.md); [all 450 DOE worst per-run final-pass coefficient percentages](../results/g02/G02_V63_ALL450_DOE_FINAL_PASS_WORST_COEFFICIENTS_20261104.csv).
+
+## 2026-11-05 — G02 targeted Phase B R2/R4/R6 results
+
+Current Phase B [36-run native MCAP audit](../results/g02/G02_V65_PHASEB_R246_12DOE_36SOLVE_PASSWISE_AUDIT_20261105.md): all 36 new Q3D solves succeeded, with 12 of 36 new runs meeting strict <1% last-pass Cself/Cmutual coefficient changes. Of the 12 original DOE whose R3/R5 both failed this coefficient screen, **8** now have a passing run. Overall **445/450** DOE now have at least one successful run whose final two adaptive passes change every C coefficient by <1%. Remaining four CAB stability outliers: **DOE0099, DOE0100, DOE0233, DOE0321**; **DOE0447** is still blocked by the Student 8000-surface-element cap. 
+
+**G02 remains OPEN**: this is an adaptive-pass numerical stability screen, not an independent-mesh error bound or physical-model validation. Preserve all R outputs and continue domain/physics/frequency QA.
