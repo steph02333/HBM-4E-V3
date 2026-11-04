@@ -1,3 +1,9 @@
+## 2026-11-04 G02 evidence update
+
+The original 450-point G02 V6.3 campaign (449 paired DOE; 898 successful Q3D solves) has now been **re-analysed using native successive Adaptive Pass Maxwell C matrices**. Of 897 runs with adjacent-pass evidence, **817 meet <1% for all individual Cself/Cmutual terms, and 80 fail on Cmutual (CAB)**. At DOE level, **380 both R3 and R5 meet the <1% pass-level criterion**, 56 one run meets it, 12 neither, 1 lacks two passes, and DOE0447 failed Student license. These are *numerical last-pass stability observations*; G02 and physics validation gates remain OPEN.
+
+Old 374-retain/75-remediate R3-vs-R5 final-matrix screen and V6.4 76-point rerun plan are retired as convergence/ML decisions. See [full G02 MCAP audit](results/g02/G02_V63_450POINT_PASSWISE_CSELF_CMUTUAL_AUDIT_20261104.md) and [all 450 point-level statuses](results/g02/G02_V63_ALL450_DOE_FINAL_PASS_WORST_COEFFICIENTS_20261104.csv). The complete 900-run and 4,236-pass local analysis artifacts are kept separately; historical documents are marked as superseded.
+
 # HBM-4E-V3 — CA2 Research Reboot
 
 NUS FYP: validation-led modelling of HBM-relevant TSV interconnect parasitics using Ansys Q3D as a **reference EM solver** (not experimental ground truth).
@@ -32,7 +38,7 @@ C:\CA2 result V2\
 ```
 
 ## Current research gate
-**GATE 01: Analytical benchmark — OPEN / NOT PASSED**
+**GATE 01: Analytical benchmark — PASSED (ideal coax only); GATE 02: numerical/physical consistency — OPEN**
 
 First reproduce the simple cylindrical Cu/SiO2 capacitor benchmark at multiple radius, height and oxide-thickness combinations. Distinguish an ideal coaxial test from real Cu/SiO2/semiconductor TSV capacitance. Compare identical geometries and electrical boundary conditions.
 
