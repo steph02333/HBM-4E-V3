@@ -51,3 +51,7 @@ See:
 Prof Lim's 25–26 September 2026 email: analytical benchmark; adaptive-mesh convergence and matrix sanity checks; domain sensitivity; independent-solver comparison; then realistic Si resistivity and GSG/GSSG/GSGSG layouts; finally Sentaurus pilot to determine whether voltage is justified as an ML input.
 
 Literature (CA1): Wang et al., *Microelectronics Journal* 45 (2014), 205–210, cylindrical TSV oxide capacitance equation (Eq. 5) and MOS-effect discussion. The paper's <5% agreement is its **published finding**, not our own V3 result.
+
+## Latest G02 V6.5 targeted refinement (2026-11-05)
+
+[Audited Phase B: 36 new R2/R4/R6 solves](results/g02/G02_V65_PHASEB_R246_12DOE_36SOLVE_PASSWISE_AUDIT_20261105.md). **36/36** solved, **8/12** previously unresolved DOE found individual last-pass Cself/Cmutual <1% solutions. In total **445/450** DOE have at least one successful run meeting this *numerical stability screen*. Remaining: DOE0099, DOE0100, DOE0233, DOE0321 and Student-license DOE0447. G02 physical/numerical validation remains OPEN.
