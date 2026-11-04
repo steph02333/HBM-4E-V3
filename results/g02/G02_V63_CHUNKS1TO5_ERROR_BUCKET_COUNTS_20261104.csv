@@ -1,0 +1,6 @@
+bucket,chunk1,chunk2,chunk3,chunk4,chunk5_paired,cumulative
+<1%,73,66,73,68,32,312
+1-2%,12,14,15,15,6,62
+2-5%,14,20,10,13,7,64
+>=5%,1,0,2,4,4,11
+SOLVER_FAILURE_UNPAIRED,0,0,0,0,1,1
