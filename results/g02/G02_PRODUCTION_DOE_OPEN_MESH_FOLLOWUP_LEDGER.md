@@ -31,3 +31,7 @@ Original per-chunk audits and the retired screening summaries remain historical 
 ## 2026-11-05 — V6.5 Phase B supplemental results (LATEST)
 
 [Phase B full 36-solve native MCAP/ASOL audit](G02_V65_PHASEB_R246_12DOE_36SOLVE_PASSWISE_AUDIT_20261105.md). All 36 R2/R4/R6 simulations solved; **8/12** old doubly failing DOE now have a passwise <1% run. **Updated 450-DOE total = 445 with at least one passing run**, four CAB last-pass failures (DOE0099, DOE0100, DOE0233, DOE0321), one Student license failure (DOE0447). The earlier 380 both R3/R5 pass and 817/897 pass results remain accurate for their ORIGINAL V6.3 runs only; they do not reflect new V6.5 extra runs. No physics/ML eligibility conclusion. G02 OPEN.
+
+## LATEST — 2026-11-05 V6.7 Phase C (overrides earlier 445/450 count)
+
+Verified [seven-run native MCAP Phase C audit](G02_V67_PHASEC_R1_FOUR_CAB_OUTLIERS_DOE0447_7SOLVE_AUDIT_20261105.md): **7/7 solves completed**. DOE0100 R1 is now last-pass <1% (worst 0.537153%), and license-failed DOE0447 now has three successful R1 runs (6/8/10um seed, all passwise <1%), selected original-seed 8um run (worst 0.022070%). The current operational all-DOE count is **447/450 with at least one numerically stable native C matrix**; 3 CAB outliers remain DOE0099, DOE0233, DOE0321. Selecting the last-pass-best R is **not** proof of physics accuracy; preserve every original and additional run. Never use a C matrix from an R other than the explicitly selected R as its ML label. Native 1 GHz versus textual 1kHz header remains open. **G02 OPEN.**
