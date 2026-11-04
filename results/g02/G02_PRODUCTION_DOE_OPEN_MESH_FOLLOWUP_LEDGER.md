@@ -1,6 +1,6 @@
 # Production DOE — Open Mesh Verification Ledger (Chunk 1–5)
 
-**Last updated:** 2026-11-04 (Chunk 4 recovery + audit appended) · **Authoritative living GitHub backlog**. Append new Chunk 2/3/4/5 issues to THIS SAME FILE, do not create separate disconnected to-do lists. Frozen 450-point V6.2/V6.3 manifest; never replace an original DOE coordinate because of mesh difficulty.
+**Last updated:** 2026-11-04 (Chunk 5 recovery audited; DOE0447 still FAILED) · **Authoritative living GitHub backlog**. Append new Chunk 2/3/4/5 issues to THIS SAME FILE, do not create separate disconnected to-do lists. Frozen 450-point V6.2/V6.3 manifest; never replace an original DOE coordinate because of mesh difficulty.
 
 ## Meaning of statuses — professor-aligned
 
@@ -267,9 +267,75 @@ DOE0305, DOE0315, DOE0318, DOE0345, DOE0356, DOE0378, DOE0396, DOE0401, DOE0404.
 
 Original Chunk-4 per-point/matrix audits: `G02_V63_chunk4_100points_mesh_audit.csv` and `G02_V63_chunk4_200solve_signed_matrices.csv`, both generated from actual uploaded ZIP, currently retained locally, not claimed committed to GitHub. **All 200 solves have no CG adaptive nonconvergence warning recorded**, and native exported header mismatch with requested 1GHz persists. This does not automatically prove accurate HBM4 physical simulation. Do not alter DOE IDs or replace hard points.
 
-## Chunk 5 — not yet received / verified
+## Chunk 5 — recovered partial result audit, 2026-11-04
 
-The 50-point final frozen DOE chunk remains pending.
+The submitted `G02_V63_H0_PRODUCTION_DOE_results_bundle.zip` SHA256 `7d6759a3faa9672418df4ae0807f2e2a2778f167d14bbc41572e9f309792cf3e` contains a native `manifest.json` declaring `chunk=5`; all 100 planned original R3/R5 IDs have `result.json` (50 frozen DOE points). **98/100 solved; 2/100 FAILED**, both belonging to **DOE0447, GSSG, rho=100 Ω·cm, R3 and R5**. Solver failure is a distinct quality class, not a C-error category. It is **NOT yet correct** to call all 450 original DOE points successfully acquired.
+
+For the **49 successfully paired DOE points**, professor-aligned worst relevant R3/R5 C relative differences: <1% **32**, 1–2% **6**, 2–5% **7**, ≥5% **4**. Median 0.4732%, P90 4.3252%, worst 6.1822% (DOE0407 |CAB|). **17/49 P1 C discrepancy ≥1%; 32/49 under1%**, of which 28 under-10%-mesh-growth diagnostic P2 candidates and 4 >=10%-growth additional-screen-clear. The 10% separation is an investigator auxiliary heuristic, **not professor-mandated**. All 49 C matrices have positive eigenvalues and matching signal nets in the recorded checks. Exported matrix frequency header still mismatches requested 1 GHz across solved cases.
+
+### Chunk-5 ≥5% special watchlist
+
+| DOE ID | Topology | rho Ω·cm | Worst coefficient | ΔC % | D/P/H/tox (µm) |
+|---|---|---:|---|---:|---|
+| DOE0406 | GSGSG | 1 | CAB | 5.0820 | 5.29121 / 12.93521 / 26.31592 / 0.36866 |
+| DOE0407 | GSGSG | 1 | CAB | **6.1822** | 3.26199 / 19.64152 / 42.14727 / 0.33561 |
+| DOE0421 | GSG | 1 | CAA | 5.3004 | 3.43947 / 12.26979 / 49.50157 / 0.35947 |
+| DOE0422 | GSG | 1 | CAA | 5.0903 | 3.90312 / 10.55119 / 26.81056 / 0.17715 |
+
+Five-chunk ≥5% special watchlist now contains **11** points (1 Chunk1 + 0 Chunk2 + 2 Chunk3 + 4 Chunk4 + 4 Chunk5). These are included in the normal P1 queue, not separate replacement samples.
+
+### P1: all 17 Chunk-5 ≥1% C-delta DOE IDs (OPEN)
+
+| DOE ID | Topology | rho Ω·cm | Worst C | R3/R5 ΔC % | Total mesh growth % | Status |
+|---|---|---:|---|---:|---:|---|
+| DOE0395 | GSSG | 1 | CAB | 3.032357 | 24.598338 | OPEN |
+| DOE0405 | GSSG | 100 | CAB | 1.769312 | 36.262866 | OPEN |
+| DOE0406 | GSGSG | 1 | CAB | 5.082031 | 20.232766 | OPEN |
+| DOE0407 | GSGSG | 1 | CAB | 6.182178 | 39.378914 | OPEN |
+| DOE0408 | GSGSG | 1 | CAB | 4.317604 | 19.392315 | OPEN |
+| DOE0410 | GSGSG | 1 | CAB | 3.428453 | 16.544694 | OPEN |
+| DOE0411 | GSGSG | 10 | CAB | 1.319865 | 2.615063 | OPEN |
+| DOE0412 | GSGSG | 10 | CAB | 1.227960 | 2.667364 | OPEN |
+| DOE0421 | GSG | 1 | CAA | 5.300429 | 51.892430 | OPEN |
+| DOE0422 | GSG | 1 | CAA | 5.090286 | 34.206219 | OPEN |
+| DOE0424 | GSG | 1 | CAA | 4.355676 | 74.280040 | OPEN |
+| DOE0425 | GSG | 1 | CAA | 4.291699 | 51.391650 | OPEN |
+| DOE0433 | GSG | 100 | CAA | 1.161961 | 17.073171 | OPEN |
+| DOE0435 | GSG | 100 | CAA | 1.186759 | 26.803119 | OPEN |
+| DOE0437 | GSSG | 1 | CAB | 1.272572 | 14.147910 | OPEN |
+| DOE0438 | GSSG | 1 | CAB | 2.710329 | 24.736550 | OPEN |
+| DOE0443 | GSSG | 10 | CBB | 3.537656 | 24.902940 | OPEN |
+
+### P2: 28 under-1% C cases with extra <10% total-mesh-growth diagnostic (selective audit only)
+
+DOE0370, DOE0375, DOE0400, DOE0409, DOE0413, DOE0414, DOE0415, DOE0416, DOE0417, DOE0418, DOE0419, DOE0420, DOE0423, DOE0426, DOE0427, DOE0428, DOE0429, DOE0430, DOE0431, DOE0432, DOE0434, DOE0436, DOE0439, DOE0440, DOE0442, DOE0444, DOE0445, DOE0446.
+
+### Extra-screen-clear: 4 C-under1% points with ≥10% mesh-growth diagnostic
+
+DOE0441, DOE0448, DOE0449, DOE0450.
+
+### Separate solver-failure queue — rerun before claiming completed 450-point production acquisition
+
+**DOE0447**, GSSG, rho **100 Ω·cm**: `V62_DOE0447_GSSG_S1_BOTH_OX_L6p0_R3` and `..._R5` both `FAILED` with "AEDT did not solve; inspect case AEDT messages". The case ID `S1` refers to conductivity sigma=1 S/m, corresponding to rho=100 Ω·cm. Do not confuse sigma S1 with rho1. Retry only this original frozen DOE coordinate after verifying AEDT health; keep every previously solved Chunk5 case intact. If this persists, preserve profile and AEDT error messages.
+
+### Cumulative production DOE acquisition at this checkpoint
+
+| Metric | Chunk 1–4 | Chunk 5 | Combined |
+|---|---:|---:|---:|
+| Original DOE points attempted | 400 | 50 | **450/450** |
+| Planned simulations | 800 | 100 | **900** |
+| Saved successful simulations | 800 | 98 | **898/900** |
+| Fully successful R3/R5 DOE pairs | 400 | 49 | **449/450** |
+| R3/R5 relevant C delta <1% | 280 | 32 | **312** |
+| P1 R3/R5 C delta ≥1% | 120 | 17 | **137** |
+| P2 under1%-C and <10% mesh growth (extra diagnostic) | 243 | 28 | **271** |
+| Under1%-C and ≥10% mesh growth (extra diagnostic) | 37 | 4 | **41** |
+| ΔC ≥5% special cases | 7 | 4 | **11** |
+| Unpaired due to failure | 0 | 1 | **1 (DOE0447)** |
+
+This is a robust **first-pass acquisition coverage** record, **not validated physical truth**. Dataset freeze is retained and no DOE cases were resampled. The local files `G02_V63_chunk5_50points_mesh_audit.csv` and `G02_V63_chunk5_100solve_signed_matrices.csv` were exported from the real ZIP but are not committed by this ledger update.
+
+
 
 ## Follow-up execution plan (do this AFTER main DOE acquisition, per researcher's preference)
 
@@ -277,7 +343,7 @@ The 50-point final frozen DOE chunk remains pending.
 2. Generate deduplicated **targeted follow-up manifest** preserving original DOE IDs and all six original inputs. **P1 first**: try a third genuinely different adaptive level, compare all relevant C coefficients to both historical levels, check Student surface license constraints. If R7 is infeasible or ineffective, use controlled alternate mesh allocation and compare independently. No universal blind R7 assumption.
 3. For P2, audit a **representative random / risk-stratified sample**, not necessarily all 63 solely because of arbitrary 10% mesh-growth cutoff. Examine actual mesh distribution and adaptive history; further levels only where needed.
 4. Maintain follow-up result statuses `OPEN`, `ATTEMPTED`, `CONFIRMED_WITHIN_POLICY`, `UNRESOLVED`, `BLOCKED_STUDENT_LIMIT`; never call `SOLVED` automatically `PHYSICALLY_VALIDATED`.
-5. Before training/reporting as truth: resolve Q3D native 1 GHz vs exported matrix frequency-header mismatch (present in all 800 Chunk 1–4 solves); address remaining simplified H0 physical-model and independent solver caveats separately.
+5. Before training/reporting as truth: resolve Q3D native 1 GHz vs exported matrix frequency-header mismatch (present in all 898 successful Chunk 1–5 solves; two DOE0447 cases failed before valid C exports); address remaining simplified H0 physical-model and independent solver caveats separately.
 6. Record exact follow-up command, runner/script checksum, run folder, numerical comparisons and evidence ZIP; commit updated ledger alongside per-point QA CSV.
 
 **This ledger is a living audit backlog, not a declaration that 90/100 labels are unusable.**
