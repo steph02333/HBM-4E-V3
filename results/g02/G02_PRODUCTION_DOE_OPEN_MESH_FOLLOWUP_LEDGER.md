@@ -1,6 +1,14 @@
 # Production DOE — Open Mesh Verification Ledger (Chunk 1–5)
 
-**Last updated:** 2026-11-04 (Chunk 5 recovery audited; DOE0447 still FAILED) · **Authoritative living GitHub backlog**. Append new Chunk 2/3/4/5 issues to THIS SAME FILE, do not create separate disconnected to-do lists. Frozen 450-point V6.2/V6.3 manifest; never replace an original DOE coordinate because of mesh difficulty.
+**Last updated:** 2026-11-04 (combined 450-point <2% provisional ML triage, license-cap evidence added)
+
+## New combined-dataset operational ML triage (2026-11-04; do not overwrite original professor QA)
+
+The researcher now elects a **<2% worst-coefficient R3/R5 difference** as an **operational provisional ML-label screen**, treating all five chunks as ONE database: **374/450 provisional retain (312 <1%, 62 1–<2%)**, **75/450 at ≥2% requiring numerical follow-up (64 at 2–<5%, 11 at ≥5%)**, and **1/450 solver failure (DOE0447)**. The original **137 ≥1% P1** cases remain in this audit log for stricter professor-oriented mesh-refinement reporting: **62 are now 1–<2% and provisionally retainable by the weaker ML rule**, 75 remain >=2%; this is **not** retroactive physical validation.
+
+**Confirmed license cause for DOE0447:** original AEDT raw error identifies **8030 Student 3D surface elements R3** and **8340 R5**, both exceeding 8000. This is a real cap violation. By contrast, successful mesh-export **total elements** ≥8000 (144 of 449 successful DOE pairs) are NOT the same license counter and **must not** be called license violations. **75-case exact geometry + per-mesh data** and **144-case total-mesh diagnostic list** are in the new local unified datasets; [global analysis and repair plan](G02_V63_ALL450_GLOBAL_2PCT_MESH_REMEDIATION_20261104.md) is committed on GitHub.
+
+Target **DOE0447 separately first**, then small third-mesh pilot at extreme >=5% cases, then remaining 2–<5% using independent mesh allocations under Student surface cap. Never blindly blanket-R7; require genuine mesh distinction and cross-solution C stability before relabeling. Preserve every frozen DOE coordinate, original values, and both <1% and <2% QA flags.
 
 ## Meaning of statuses — professor-aligned
 
