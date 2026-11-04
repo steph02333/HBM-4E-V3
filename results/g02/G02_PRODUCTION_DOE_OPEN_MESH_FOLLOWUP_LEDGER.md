@@ -1,6 +1,6 @@
 # Production DOE — Open Mesh Verification Ledger (Chunk 1–5)
 
-**Last updated:** 2026-11-04 (Chunk 3 audit appended) · **Authoritative living GitHub backlog**. Append new Chunk 2/3/4/5 issues to THIS SAME FILE, do not create separate disconnected to-do lists. Frozen 450-point V6.2/V6.3 manifest; never replace an original DOE coordinate because of mesh difficulty.
+**Last updated:** 2026-11-04 (Chunk 4 recovery + audit appended) · **Authoritative living GitHub backlog**. Append new Chunk 2/3/4/5 issues to THIS SAME FILE, do not create separate disconnected to-do lists. Frozen 450-point V6.2/V6.3 manifest; never replace an original DOE coordinate because of mesh difficulty.
 
 ## Meaning of statuses — professor-aligned
 
@@ -191,9 +191,85 @@ DOE0218, DOE0223, DOE0225, DOE0262, DOE0270, DOE0287, DOE0306, DOE0308, DOE0313.
 
 New local evidence files: `G02_V63_chunk3_100points_mesh_audit.csv` (100 real pairs and full inputs), `G02_V63_chunk3_200solve_signed_matrices.csv` (200 signed matrices), original raw archive retained by researcher. **These companion files are local artifacts, not yet in repository.** [Chunk 3 detailed audit](G02_V63_CHUNK3_100POINT_PRODUCTION_AUDIT_20261104.md).
 
-## Chunk 4 — partial run, recovery pending; Chunk 5 — not yet verified
+## Chunk 4 — fully recovered and audited, 2026-11-04
 
-Chunk 4 has a reported local recovery diagnostic of 155 solved, 14 failed and 31 not saved at the time of the crash. **Do not count it as complete** until complete results and manifest are audited. Chunk 5 has no confirmed uploaded results.
+Real recovered `G02_V63_H0_PRODUCTION_DOE_results_bundle.zip` SHA256 `25f01cd3a86e81234a09ac59173bea9893fc64bb7a9d1dcb64b2d22474494303`. ZIP `manifest.json` says `chunk=4`, and `progress.json` lists 200 cases. **All 200 unique R3/R5 solves saved `SOLVED_UNVERIFIED_PHYSICS`**, representing **100 original frozen DOE points**. Previously interrupted local run had 155 solved/14 failed/31 unsaved; successful safe resume filled all 45 without discarding the 155 solved cases. Final output has no failed result.json.
+
+**Professor-relevant R3→R5 numerical C screen:** **68/100** have all applicable CAA/CBB/|CAB| coefficient differences <1%; **32/100** have at least one ≥1% and are P1. Adjacent bucket counts **<1%=68, 1–2%=15, 2–5%=13, ≥5%=4**. Median worst per-point C delta **0.4637%**, p90 ~**3.2905%**, maximum **6.2131%** (DOE0380 CAA). Median actual total mesh growth **5.0879%**. The supplemental 10% mesh-growth heuristic is NOT the professor's criterion; it labels 59 C-under-1% points for selective verification, while 9 meet that extra diagnostic.
+
+### ≥5% special watchlist — Chunk 4 only
+
+| DOE ID | Topology | rho (Ω·cm) | Worst coefficient | ΔC (%) | D/P/H/tox (µm) |
+|---|---|---:|---|---:|---|
+| DOE0319 | GSGSG | 1 | AB | 5.4031 | 4.05424 / 14.67569 / 34.46872 / 0.32166 |
+| DOE0361 | GSGSG | 1 | AB | 5.4009 | 3.41919 / 18.93650 / 37.20655 / 0.20478 |
+| DOE0365 | GSGSG | 1 | AB | 5.7074 | 4.94650 / 16.59706 / 36.66756 / 0.27781 |
+| DOE0380 | GSG | 1 | AA | **6.2131** | 3.34749 / 13.39294 / 29.90007 / 0.19222 |
+
+The combined four-chunk >=5% watchlist now has **7 distinct points**: Chunk 1 DOE0050; Chunk 3 DOE0184, DOE0240; Chunk 4 DOE0319, DOE0361, DOE0365, DOE0380; Chunk 2 none. The living [special-watchlist CSV](G02_V63_CHUNKS1TO4_GE5_SPECIAL_WATCHLIST_20261104.csv) has all original parameter coordinates.
+
+### P1: all 32 Chunk-4 high-priority DOE points, worst coefficient ≥1%
+
+| DOE ID | Topology | rho Ω·cm | Worst coefficient | R3/R5 ΔC (%) | Δ total mesh elements (%) | Status |
+|---|---|---:|---|---:|---:|---|
+| DOE0279 | GSGSG | 10 | AB | 1.538751 | 2.615063 | OPEN |
+| DOE0300 | GSG | 100 | AA | 1.035704 | 17.318982 | OPEN |
+| DOE0314 | GSSG | 100 | AB | 1.555528 | 17.830009 | OPEN |
+| DOE0317 | GSGSG | 1 | AB | 4.491268 | 29.211470 | OPEN |
+| DOE0319 | GSGSG | 1 | AB | 5.403076 | 24.110879 | OPEN |
+| DOE0320 | GSGSG | 1 | AB | 1.030632 | 40.019714 | OPEN |
+| DOE0321 | GSGSG | 10 | AB | 1.347436 | 2.615063 | OPEN |
+| DOE0324 | GSGSG | 10 | AB | 1.298121 | 2.722513 | OPEN |
+| DOE0327 | GSGSG | 100 | AB | 1.068542 | 3.092243 | OPEN |
+| DOE0330 | GSGSG | 100 | AB | 2.096997 | 19.139105 | OPEN |
+| DOE0331 | GSG | 1 | AA | 4.351269 | 71.853320 | OPEN |
+| DOE0332 | GSG | 1 | AA | 3.290394 | 49.513619 | OPEN |
+| DOE0335 | GSG | 1 | AA | 3.758090 | 29.224652 | OPEN |
+| DOE0346 | GSSG | 1 | AB | 4.427775 | 22.936288 | OPEN |
+| DOE0349 | GSSG | 1 | AB | 1.536955 | 65.051715 | OPEN |
+| DOE0352 | GSSG | 10 | AB | 2.002961 | 17.461197 | OPEN |
+| DOE0355 | GSSG | 10 | BB | 1.501988 | 24.181919 | OPEN |
+| DOE0357 | GSSG | 100 | AB | 2.022561 | 27.632874 | OPEN |
+| DOE0359 | GSSG | 100 | AB | 1.005922 | 21.190765 | OPEN |
+| DOE0361 | GSGSG | 1 | AB | 5.400901 | 48.144276 | OPEN |
+| DOE0364 | GSGSG | 1 | AB | 1.311286 | 2.772809 | OPEN |
+| DOE0365 | GSGSG | 1 | AB | 5.707363 | 16.718913 | OPEN |
+| DOE0371 | GSGSG | 100 | BB | 1.188688 | 22.799181 | OPEN |
+| DOE0372 | GSGSG | 100 | AB | 2.019250 | 18.734793 | OPEN |
+| DOE0373 | GSGSG | 100 | AB | 3.291440 | 43.682733 | OPEN |
+| DOE0376 | GSG | 1 | AA | 1.699867 | 22.656250 | OPEN |
+| DOE0380 | GSG | 1 | AA | 6.213086 | 61.374795 | OPEN |
+| DOE0391 | GSSG | 1 | AB | 4.159713 | 25.124792 | OPEN |
+| DOE0392 | GSSG | 1 | AB | 2.754280 | 17.474186 | OPEN |
+| DOE0393 | GSSG | 1 | AB | 1.049908 | -10.815047 | OPEN |
+| DOE0402 | GSSG | 100 | BB | 2.708468 | 19.410745 | OPEN |
+| DOE0403 | GSSG | 100 | AA | 1.070785 | 20.921409 | OPEN |
+
+### P2: 59 Chunk-4 selective-audit candidates (all C<1%, additional total-mesh-growth heuristic <10%)
+
+DOE0274, DOE0275, DOE0280, DOE0284, DOE0285, DOE0290, DOE0295, DOE0304, DOE0309, DOE0310, DOE0316, DOE0322, DOE0323, DOE0325, DOE0326, DOE0328, DOE0329, DOE0333, DOE0334, DOE0336, DOE0337, DOE0338, DOE0339, DOE0340, DOE0341, DOE0342, DOE0343, DOE0344, DOE0347, DOE0348, DOE0350, DOE0351, DOE0353, DOE0354, DOE0358, DOE0360, DOE0362, DOE0363, DOE0366, DOE0367, DOE0368, DOE0369, DOE0374, DOE0377, DOE0379, DOE0381, DOE0382, DOE0383, DOE0384, DOE0385, DOE0386, DOE0387, DOE0388, DOE0389, DOE0390, DOE0394, DOE0397, DOE0398, DOE0399.
+
+### TWO_LEVEL_SCREEN_CLEAR: 9 Chunk-4 cases (C<1% with additional ≥10% mesh-growth diagnostic)
+
+DOE0305, DOE0315, DOE0318, DOE0345, DOE0356, DOE0378, DOE0396, DOE0401, DOE0404.
+
+### Cumulative after Chunk 4
+
+| Metric | Chunk1 | Chunk2 | Chunk3 | Chunk4 | Total |
+|---|---:|---:|---:|---:|---:|
+| Frozen original DOE points acquired | 100 | 100 | 100 | 100 | **400/450** |
+| Successful saved Q3D solves | 200 | 200 | 200 | 200 | **800** |
+| All relevant C deltas <1% | 73 | 66 | 73 | 68 | **280** |
+| P1 (≥1% in ≥1 C term) | 27 | 34 | 27 | 32 | **120** |
+| P2 (C<1%, under10% mesh-growth diagnostic) | 63 | 57 | 64 | 59 | **243** |
+| C<1% with extra ≥10% mesh-growth diagnostic | 10 | 9 | 9 | 9 | **37** |
+| C difference ≥5% | 1 | 0 | 2 | 4 | **7** |
+
+Original Chunk-4 per-point/matrix audits: `G02_V63_chunk4_100points_mesh_audit.csv` and `G02_V63_chunk4_200solve_signed_matrices.csv`, both generated from actual uploaded ZIP, currently retained locally, not claimed committed to GitHub. **All 200 solves have no CG adaptive nonconvergence warning recorded**, and native exported header mismatch with requested 1GHz persists. This does not automatically prove accurate HBM4 physical simulation. Do not alter DOE IDs or replace hard points.
+
+## Chunk 5 — not yet received / verified
+
+The 50-point final frozen DOE chunk remains pending.
 
 ## Follow-up execution plan (do this AFTER main DOE acquisition, per researcher's preference)
 
@@ -201,7 +277,7 @@ Chunk 4 has a reported local recovery diagnostic of 155 solved, 14 failed and 31
 2. Generate deduplicated **targeted follow-up manifest** preserving original DOE IDs and all six original inputs. **P1 first**: try a third genuinely different adaptive level, compare all relevant C coefficients to both historical levels, check Student surface license constraints. If R7 is infeasible or ineffective, use controlled alternate mesh allocation and compare independently. No universal blind R7 assumption.
 3. For P2, audit a **representative random / risk-stratified sample**, not necessarily all 63 solely because of arbitrary 10% mesh-growth cutoff. Examine actual mesh distribution and adaptive history; further levels only where needed.
 4. Maintain follow-up result statuses `OPEN`, `ATTEMPTED`, `CONFIRMED_WITHIN_POLICY`, `UNRESOLVED`, `BLOCKED_STUDENT_LIMIT`; never call `SOLVED` automatically `PHYSICALLY_VALIDATED`.
-5. Before training/reporting as truth: resolve Q3D native 1 GHz vs exported matrix frequency-header mismatch (present in all 600 Chunk 1 + Chunk 2 + Chunk 3 solves); address remaining simplified H0 physical-model and independent solver caveats separately.
+5. Before training/reporting as truth: resolve Q3D native 1 GHz vs exported matrix frequency-header mismatch (present in all 800 Chunk 1–4 solves); address remaining simplified H0 physical-model and independent solver caveats separately.
 6. Record exact follow-up command, runner/script checksum, run folder, numerical comparisons and evidence ZIP; commit updated ledger alongside per-point QA CSV.
 
 **This ledger is a living audit backlog, not a declaration that 90/100 labels are unusable.**
