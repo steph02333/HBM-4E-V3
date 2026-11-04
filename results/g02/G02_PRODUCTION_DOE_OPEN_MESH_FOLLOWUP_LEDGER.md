@@ -1,3 +1,9 @@
+# G02 V6.3 — CURRENT CORRECTED EVIDENCE (2026-11-04)
+
+**Passwise Maxwell C-matrix data are NOW RECOVERED from all five MCAP/ASOL archives.** 450 DOE, 900 R3/R5 folders, 898 successful runs, 4,225 pass matrices from successful runs and 11 partial matrices from failed DOE0447 attempts. Of 897 successful runs with adjacent passes, **817 meet <1% for every individual Cself and Cmutual, 80 fail CAB <1%**. Among 450 DOE: **380 both R3/R5 meet last-pass <1%, 56 only one, 12 neither, 1 single-pass exception (DOE0402), 1 license failure (DOE0447)**. Ansys matrix Delta C <0.5% was recorded in 897 runs but DOES NOT guarantee every small CAB <1%. All native matrix SD files declare 1 GHz; older text exports still show an unexplained 1kHz header.
+
+**The old 374 provisional ML / 75 mandatory mesh repairs, 137 P1 / 271 P2 queues, and 76-point Batch A/B continuation are RETIRED AS DECISION RULES.** R3 final vs R5 final differences are separate independent-run sensitivity, not within-run further adaptive refinement. Current passwise audit: [full evidence report](G02_V63_450POINT_PASSWISE_CSELF_CMUTUAL_AUDIT_20261104.md); [450-row DOE status table](G02_V63_ALL450_DOE_FINAL_PASS_WORST_COEFFICIENTS_20261104.csv). G02 remains OPEN; no automatic ML-label certification.
+
 # G02 numerical evidence — CORRECTED 2026-11-04
 
 **CURRENT interpretation: G02 OPEN. The prior "374 ML provisionally retained / 75 mandatory repair", P1/P2 final-mesh separation screening and the 76-point V6.4 remediation plan are RETIRED as action criteria.**
