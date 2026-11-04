@@ -27,3 +27,7 @@ Within **one** adaptive Q3D solution, compare successive passes p and p+1; repor
 4. Until that check, neither the 374 former "provisional retain" label nor the 75 former "mandatory repair" queue is an approved status. **G02 remains OPEN.**
 
 Original per-chunk audits and the retired screening summaries remain historical snapshots, not current solver-convergence certification.
+
+## 2026-11-05 — V6.5 Phase B supplemental results (LATEST)
+
+[Phase B full 36-solve native MCAP/ASOL audit](G02_V65_PHASEB_R246_12DOE_36SOLVE_PASSWISE_AUDIT_20261105.md). All 36 R2/R4/R6 simulations solved; **8/12** old doubly failing DOE now have a passwise <1% run. **Updated 450-DOE total = 445 with at least one passing run**, four CAB last-pass failures (DOE0099, DOE0100, DOE0233, DOE0321), one Student license failure (DOE0447). The earlier 380 both R3/R5 pass and 817/897 pass results remain accurate for their ORIGINAL V6.3 runs only; they do not reflect new V6.5 extra runs. No physics/ML eligibility conclusion. G02 OPEN.
