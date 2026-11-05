@@ -1,0 +1,7 @@
+topology,architecture,CV_mean_NMAE,CV_sd_NMAE,fixed_C,fixed_gamma,fixed_epsilon
+GSG,Pooled,0.061253,0.009943,100,0.3,0.01
+GSG,TopologySpecific,0.071633,0.011262,100,0.3,0.01
+GSSG,Pooled,0.068666,0.008598,100,0.3,0.01
+GSSG,TopologySpecific,0.073412,0.008460,100,0.3,0.01
+GSGSG,Pooled,0.071164,0.019214,100,0.3,0.01
+GSGSG,TopologySpecific,0.079981,0.024556,100,0.3,0.01
