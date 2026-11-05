@@ -1,3 +1,9 @@
+## 2026-11-05 — Section 13 Q3D verification runner prepared; simulations NOT run
+- Reused G02 V63 original PyAEDT production `run_case` (no geometry rewrite); four fixed candidate geometries, R3/R5 policy, four dry-runs succeeded. Downloadable script package supplied in conversation.
+- The earlier exact 12B manifest CSV was missing; four **full-precision geometries were deterministically reconstructed** from frozen 450 DOE train data, seed 2026 Sobol run, and original candidate indices, matching six-decimal Section 12B printout. New hash differs from old 12B hash; no claim of byte-identical manifest. Prediction labels in reconstructed file are only rounded to six places.
+- Solver execution has **not occurred**. Do not infer fresh Q3D accuracy, numerical convergence or verified optimization improvement.
+- [Full runner readiness and integrity record](../results/optimization/G02_SECTION13_RUNNER_READINESS_20261105.md). Flagged OPT00662 and all previous surrogate validity failures remain frozen and disclosed.
+
 ## 2026-11-05 — Section 12B: executed preflight FAIL evidence preserved
 - 4 pre-registered verification candidates checked, **36 local perturbation cases**; 35 in preliminary geometry envelope. Three candidates (OPT03671, OPT01697, OPT02901) passed simplified local matrix checks, though **none has been approved by the actual Q3D builder**.
 - **OPT00662 (GSGSG, rho=100)** predicted CAB=-0.003095 fF but **4/9 local variants predicted positive Maxwell mutual CAB**: +0.005718 (D-0.03um), +0.001604 (P-0.10um), +0.011462 (H-0.25um), +0.005319 (tox-0.004um). Flag as surrogate-zero-crossing / optimization exploitation; do not delete, relabel, or claim it represents physically verified near-zero coupling.
