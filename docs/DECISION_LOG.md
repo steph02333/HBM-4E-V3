@@ -1,3 +1,10 @@
+## 2026-11-05 — Section 12B: executed preflight FAIL evidence preserved
+- 4 pre-registered verification candidates checked, **36 local perturbation cases**; 35 in preliminary geometry envelope. Three candidates (OPT03671, OPT01697, OPT02901) passed simplified local matrix checks, though **none has been approved by the actual Q3D builder**.
+- **OPT00662 (GSGSG, rho=100)** predicted CAB=-0.003095 fF but **4/9 local variants predicted positive Maxwell mutual CAB**: +0.005718 (D-0.03um), +0.001604 (P-0.10um), +0.011462 (H-0.25um), +0.005319 (tox-0.004um). Flag as surrogate-zero-crossing / optimization exploitation; do not delete, relabel, or claim it represents physically verified near-zero coupling.
+- All four candidates are new relative to original 450 designs at identical topology and resistivity; nearest **same topology and rho TRAINING** geometry distances are .487287/.413240/.395788/.436801 (scaled 4D Euclidean), not calibrated uncertainty.
+- No new Q3D run, no retraining, no candidate replacement. Local preflight manifest SHA-256: `af7ec78d526ab976c665754475ad22f9c7d6ee3877946afd81212a3c40b44891`. [Full actual executed audit](../results/optimization/G02_SECTION12B_PREFLIGHT_ACTUAL_RESULTS_20261105.md).
+- Decision: **FYP is not invalidated**; random DOE prediction result remains, but robust optimization validity is NOT established. Next gate is real Q3D build/mesh/solver verification including deliberately retained failed-mode stress test. No further model tuning based on the final test or post-Q3D outcomes.
+
 ## 2026-11-05 — Section 12A sampled optimization and Pareto front
 - Executed `ML (14).ipynb`; **4096** scrambled Sobol geometries → **4092** provisional gap-feasible → **36,828** topology×resistivity model predictions; **94** sampled Pareto points and **18** MinCap/Balanced selection rows. No ML retraining or new Q3D validation.
 - **83/36,828 predicted 2×2 Maxwell matrices fail the tested physical matrix filters**, concentrated at **GSGSG rho=100 (82)** and **GSSG rho=100 (1)**. Section 11A's zero violations at existing DOE do NOT establish global surrogate physical validity.
