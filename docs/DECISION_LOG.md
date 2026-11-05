@@ -1,3 +1,11 @@
+## 2026-11-05 — Section 13 FIRST fresh Q3D solver evidence: OPT03671 GSG rho10
+- Original `SECTION13_EVIDENCE_ONLY.zip` inspected: two successful independent R3/R5 runs with 1x1 native Maxwell C matrix; both Q3D adaptive CG runs report normal completion. CAA R3=**15.5314544921 fF**, R5=**15.5283125724 fF**; R3–R5 difference **0.0202%**.
+- Frozen ML prediction **16.281986 fF**, absolute error **0.753673 fF** and relative error **~4.85%** against R5. This error is reported, not suppressed or retroactively tuned away.
+- R3/R5 final reported adaptive deltas **0.012532% / 0.005157%**, with 3 passes each. Previous exact native adjacent-pass per-entry gate is not independently rederived from the files here.
+- **Unresolved solver/export frequency header mismatch:** setup requests 1000 MHz but native matrix text header reports **1 kHz**; alternate selector headers 1 Hz with same C matrix. Do NOT claim resolved 1 GHz until investigated.
+- **No optimization improvement claim yet**; no baseline comparison, and no runs yet for remaining OPT01697, OPT02901, OPT00662.
+- [First verification evidence record](../results/optimization/G02_SECTION13_OPT03671_FRESH_Q3D_FIRST_EVIDENCE_20261105.md).
+
 ## 2026-11-05 — Section 13 Q3D verification runner prepared; simulations NOT run
 - Reused G02 V63 original PyAEDT production `run_case` (no geometry rewrite); four fixed candidate geometries, R3/R5 policy, four dry-runs succeeded. Downloadable script package supplied in conversation.
 - The earlier exact 12B manifest CSV was missing; four **full-precision geometries were deterministically reconstructed** from frozen 450 DOE train data, seed 2026 Sobol run, and original candidate indices, matching six-decimal Section 12B printout. New hash differs from old 12B hash; no claim of byte-identical manifest. Prediction labels in reconstructed file are only rounded to six places.
