@@ -1,3 +1,10 @@
+## 2026-11-05 — Section 13 one-shot actual verification outcomes (including failures)
+- Received full `SECTION13_ALL_FOUR_EVIDENCE_20261105_132314.zip`; **6/8** mesh-policy solver cases completed across OPT03671, OPT01697, OPT02901; OPT00662 **R3 and R5 FAILED in PyAEDT design initialization** (`NoneType.GetName`) before simulation. No Q3D capacitance exists for OPT00662; cannot label its near-zero prediction physically confirmed or refuted.
+- Independent fresh Q3D R5 versus frozen ML relative error: OPT03671 CAA **4.85%**; OPT01697 [CAA,CBB,CAB] **[12.46%,11.94%,10.23%]**; OPT02901 **[11.03%,13.25%,24.78%]**. Model accuracy deteriorates on the tested optimized geometries; report all adverse outcomes.
+- For successful cases, R3–R5 component differences are **0.020–0.300%**, and last CG convergence deltas are below 0.5%; **not** an independent consecutive-native-pass C convergence proof. 1GHz requested vs 1kHz export header discrepancy unresolved.
+- These values are independent solver evaluation, **not proof of improvement over matched Q3D baseline**. Freeze model, preserve all failed runs and repair AEDT initialization solely for OPT00662.
+- [Full evidence audit](../results/optimization/G02_SECTION13_ALL_FOUR_VERIFICATION_AUDIT_20261105.md) / [component metrics CSV](../results/optimization/G02_SECTION13_ALL_FOUR_Q3D_COMPONENT_COMPARISON_20261105.csv).
+
 ## 2026-11-05 — Section 13 FIRST fresh Q3D solver evidence: OPT03671 GSG rho10
 - Original `SECTION13_EVIDENCE_ONLY.zip` inspected: two successful independent R3/R5 runs with 1x1 native Maxwell C matrix; both Q3D adaptive CG runs report normal completion. CAA R3=**15.5314544921 fF**, R5=**15.5283125724 fF**; R3–R5 difference **0.0202%**.
 - Frozen ML prediction **16.281986 fF**, absolute error **0.753673 fF** and relative error **~4.85%** against R5. This error is reported, not suppressed or retroactively tuned away.
