@@ -1,3 +1,13 @@
+
+## 2026-11-05 — Final 450-DOE ML study completed (fresh experiment)
+- The fresh ML notebook `ML (11).ipynb` has been executed through Section 10. **This is a new experimental split (315 train, 67 validation, 68 test, seed 2026), not the superseded V1/V2 split**. 450 final selected-R Q3D labels retained; 447/450 passed the numerical adjacent-pass <1% gate, three approved GSGSG-R1 exceptions (DOE0099/0233/0321) belong to training.
+- Training-only CV screened preprocessing, seven algorithms, tuned SVR/ExtraTrees/MLP, and compared cross-topology pooling vs topology-specific models at matched SVR parameters. Pooled CV improvement: GSG 0.071633→0.061253; GSSG 0.073412→0.068666; GSGSG 0.079981→0.071164 NMAE.
+- Final held-out test (68 DOE) was completed; among tested methods, GSG MLP three-seed prediction ensemble NMAE 0.059548/R² 0.976115; pooled SVR GSSG NMAE 0.067763/mean R² 0.987502; pooled SVR GSGSG NMAE 0.050801/mean R² 0.988971.
+- **Architectural terminology:** the pooled prediction system consists of THREE *target-wise* SVRs (CAA, CBB, CAB), with topology encoding and structural label exclusion for GSG. It is NOT a single multi-output model; does not equal three separate topology-specific models. Pooled fixed parameters from Section 9 were C=100, gamma=0.3, epsilon=0.01; it was not separately retuned.
+- **Selection disclosure:** the above per-topology best observed test scores must NOT be presented as an unbiased accuracy estimate of a newly selected post-test hybrid. A pooled SVR has been recommended as a unified prediction interface, but the recommendation was articulated after viewing test scores. Do not retune based on held-out test.
+- **Locked evidence archive:** [complete report-ready ML record](../results/ml/G02_ML_FINAL_450DOE_20261105.md), [report/slides guide](G02_ML_FINAL_REPORT_SLIDE_GUIDE_20261105.md), [topology metrics](../results/ml/G02_ML_FINAL_TEST_TOPOLOGY_METRICS_20261105.csv), [component metrics](../results/ml/G02_ML_FINAL_TEST_COMPONENT_METRICS_20261105.csv), [paired architecture CV summary](../results/ml/G02_ML_ARCHITECTURE_CV_COMPARISON_20261105.csv).
+- **Still missing from GitHub:** raw 4.3 MB executed notebook, exact 450-row CSV and frozen split manifest; these are separate artifacts requiring repository file upload. The GitHub Markdown summary is a verified record of notebook outputs, not a substitute for full computational reproducibility.
+
 # Decision and evidence log
 
 ## 2026-11-01 — CA2 V3 restart
