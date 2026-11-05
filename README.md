@@ -3,6 +3,8 @@
 **Latest completed ML evidence (supersedes V1/V2 ML experiment as the report baseline):**
 - [Full executed-study report, exact final metrics, methods, limitations](results/ml/G02_ML_FINAL_450DOE_20261105.md)
 - [Report and slide authoring guide](docs/G02_ML_FINAL_REPORT_SLIDE_GUIDE_20261105.md)
+- [Section 12A Pareto optimization: 36,828 predictions and physical-validity caveats](results/optimization/G02_SECTION12A_PARETO_AUDIT_20261105.md)
+- [Section 12A selected verification candidates CSV](results/optimization/G02_SECTION12A_SELECTED_CANDIDATES_20261105.csv)
 - [Section 11B physical-sensitivity findings and flagged CAB anomaly](results/ml/G02_ML_SECTION11B_PHYSICAL_SENSITIVITY_20261105.md)
 - [Final test per-topology results CSV](results/ml/G02_ML_FINAL_TEST_TOPOLOGY_METRICS_20261105.csv)
 - [Final test per-component results CSV](results/ml/G02_ML_FINAL_TEST_COMPONENT_METRICS_20261105.csv)
