@@ -1,3 +1,10 @@
+## 2026-11-05 — Section 12A sampled optimization and Pareto front
+- Executed `ML (14).ipynb`; **4096** scrambled Sobol geometries → **4092** provisional gap-feasible → **36,828** topology×resistivity model predictions; **94** sampled Pareto points and **18** MinCap/Balanced selection rows. No ML retraining or new Q3D validation.
+- **83/36,828 predicted 2×2 Maxwell matrices fail the tested physical matrix filters**, concentrated at **GSGSG rho=100 (82)** and **GSSG rho=100 (1)**. Section 11A's zero violations at existing DOE do NOT establish global surrogate physical validity.
+- Most suspicious predicted 'optimum': **GSGSG rho=100 OPT00662 |CAB|=0.00310 fF**, unverified and likely a model-risk stress-test. Do not claim actual coupling reduction or model validation from this number.
+- Objective: GSG CAA or two-signal |CAB| against P² proxy; simplified gap ≥3.5µm and training min/max bounds are *not complete manufacturing/solver feasibility constraints*. Need exact geometry gate and fresh selected-point Q3D verification.
+- Evidence: [method + caveats](../results/optimization/G02_SECTION12A_PARETO_AUDIT_20261105.md), [summary](../results/optimization/G02_SECTION12A_PARETO_SUMMARY_20261105.csv), [selected candidates](../results/optimization/G02_SECTION12A_SELECTED_CANDIDATES_20261105.csv). **Status: exploratory only.**
+
 ## 2026-11-05 — Section 11B: pooled SVR physical sensitivity inspected and archived
 - Actual source: executed `ML (13).ipynb` Section 11B (2,196 predicted evaluation points; no retraining or tuning). Experiment details, per-scenario endpoints and warnings: [Section 11B sensitivity record](../results/ml/G02_ML_SECTION11B_PHYSICAL_SENSITIVITY_20261105.md).
 - Observed CAA endpoints: D↑ and H↑ yield higher CAA; pitch↑ and oxide↑ yield lower CAA, for all 3 topologies × 3 resistivity levels. CAB magnitude has generally corresponding trends, **except** GSGSG at ρ=100 Ω·cm, where increasing oxide causes |CAB| to **increase** (0.2268→0.6488 fF). **Surrogate prediction only; not Q3D verified**.
