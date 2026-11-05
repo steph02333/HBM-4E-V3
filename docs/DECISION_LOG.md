@@ -1,3 +1,9 @@
+## 2026-11-05 — Section 11B: pooled SVR physical sensitivity inspected and archived
+- Actual source: executed `ML (13).ipynb` Section 11B (2,196 predicted evaluation points; no retraining or tuning). Experiment details, per-scenario endpoints and warnings: [Section 11B sensitivity record](../results/ml/G02_ML_SECTION11B_PHYSICAL_SENSITIVITY_20261105.md).
+- Observed CAA endpoints: D↑ and H↑ yield higher CAA; pitch↑ and oxide↑ yield lower CAA, for all 3 topologies × 3 resistivity levels. CAB magnitude has generally corresponding trends, **except** GSGSG at ρ=100 Ω·cm, where increasing oxide causes |CAB| to **increase** (0.2268→0.6488 fF). **Surrogate prediction only; not Q3D verified**.
+- Critical limitation: Section 11B used conditional one-factor-at-a-time curves at training medians, with only a simplified gap ≥3.5µm check. It did **not** establish global monotonicity or full physical constraints. 2196=all grid points, so none were excluded by this check.
+- Decision: accept as exploratory physical-sensitivity evidence and preserve anomaly; do not tune after test; next objective is constrained optimization and new independent Q3D checks.
+
 
 ## 2026-11-05 — Final 450-DOE ML study completed (fresh experiment)
 - The fresh ML notebook `ML (11).ipynb` has been executed through Section 10. **This is a new experimental split (315 train, 67 validation, 68 test, seed 2026), not the superseded V1/V2 split**. 450 final selected-R Q3D labels retained; 447/450 passed the numerical adjacent-pass <1% gate, three approved GSGSG-R1 exceptions (DOE0099/0233/0321) belong to training.
