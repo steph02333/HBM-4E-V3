@@ -1,3 +1,17 @@
+# FINAL ML RESULTS — 2026-11-05 (G02, 450 DOE)
+
+**Latest completed ML evidence (supersedes V1/V2 ML experiment as the report baseline):**
+- [Full executed-study report, exact final metrics, methods, limitations](results/ml/G02_ML_FINAL_450DOE_20261105.md)
+- [Report and slide authoring guide](docs/G02_ML_FINAL_REPORT_SLIDE_GUIDE_20261105.md)
+- [Final test per-topology results CSV](results/ml/G02_ML_FINAL_TEST_TOPOLOGY_METRICS_20261105.csv)
+- [Final test per-component results CSV](results/ml/G02_ML_FINAL_TEST_COMPONENT_METRICS_20261105.csv)
+- [Topology pooled-vs-specific fixed-parameter CV](results/ml/G02_ML_ARCHITECTURE_CV_COMPARISON_20261105.csv)
+- [Research decisions and methodological caveats](docs/DECISION_LOG.md)
+
+450 Q3D selected-R designs; new stratified **315 train / 67 validation / 68 held-out test** (seed 2026). Pooled target-wise SVR uses **three per-output models, not one three-output estimator**. Observed held-out GSG MLP ensemble NMAE 0.059548, GSSG pooled SVR 0.067763, GSGSG pooled SVR 0.050801; selection after reading test must be disclosed. The full 4.3 MB executed notebook, exact input CSV and frozen split are preserved in the separate reproducibility ZIP and **are not yet committed to GitHub**.
+
+---
+
 ## 2026-11-04 G02 evidence update
 
 The original 450-point G02 V6.3 campaign (449 paired DOE; 898 successful Q3D solves) has now been **re-analysed using native successive Adaptive Pass Maxwell C matrices**. Of 897 runs with adjacent-pass evidence, **817 meet <1% for all individual Cself/Cmutual terms, and 80 fail on Cmutual (CAB)**. At DOE level, **380 both R3 and R5 meet the <1% pass-level criterion**, 56 one run meets it, 12 neither, 1 lacks two passes, and DOE0447 failed Student license. These are *numerical last-pass stability observations*; G02 and physics validation gates remain OPEN.
